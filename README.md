@@ -8,6 +8,10 @@ There are three agents in the system
 
 Setting use_google_tool=False configuration for data retrieval agent will create knowledge base from local json dataset inside "retrievers" folder and store it in lanceDB vector db. This setup is timeconsuming. Hence, by default configuration is use_google_tool=True
 
+## Architecture Diagram
+
+![screenshot_architecture](./screenshots/multi_agent_architecture.png)
+
 ## Datasets used
 - HotPotQA - https://hotpotqa.github.io/
 - GSM8K - https://github.com/openai/grade-school-math
