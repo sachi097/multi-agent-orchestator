@@ -1,0 +1,158 @@
+
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-1234565 --------------------------
+                        User input: Classify below Sentence whether it is Positive or Negative. Answer Positive or Negative 
+Sentence: I am feeling so good today.
+                        Agent response: ['Positive']
+                        Number of expected agent calls: 1
+                        Number of actual agent calls: 1
+                        Efficiency of agent calls: 100.0 %
+                        Agents expected to be called: ['Text Classification Agent']
+                        Agents expected to be called: ['Text Classification Agent']
+                        Expected result set: ['Positive']
+                        Actual result set: ['Positive']
+                        Total output tokens: 2
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-1234565 --------------------------
+
+                
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456936 --------------------------
+                        User input: Evaluate A carnival snack booth made $50 selling popcorn each day. It made three times as much selling cotton candy. For a 5-day activity, the booth has to pay $30 rent and $75 for the cost of the ingredients. How much did the booth earn for 5 days after paying the rent and the cost of ingredients?
+                        Agent response: ['To evaluate the earnings of the carnival snack booth after paying rent and ingredient costs, we can break down the calculations step by step.\n\n1. **Earnings from Popcorn**: The booth sells popcorn for $50 each day. Over 5 days, the total earnings from popcorn will be:\n   \\[\n   50 \\text{ dollars/day} \\times 5 \\text{ days} = 250 \\text{ dollars}\n   \\]\n\n2. **Earnings from Cotton Candy**: The booth makes three times as much from cotton candy as it does from popcorn. So, the daily earnings from cotton candy will be:\n   \\[\n   3 \\times 50 \\text{ dollars} = 150 \\text{ dollars/day}\n   \\]\n   Over 5 days, the total earnings from cotton candy will thus be:\n   \\[\n   150 \\text{ dollars/day} \\times 5 \\text{ days} = 750 \\text{ dollars}\n   \\]\n\n3. **Total Earnings**: The total earnings from both popcorn and cotton candy over the 5 days will be:\n   \\[\n   250 \\text{ dollars} (popcorn) + 750 \\text{ dollars} (cotton candy) = 1000 \\text{ dollars}\n   \\]\n\n4. **Costs**: The booth has to pay $30 for rent and $75 for ingredient costs. Therefore, the total costs will be:\n   \\[\n   30 \\text{ dollars (rent)} + 75 \\text{ dollars (ingredients)} = 105 \\text{ dollars}\n   \\]\n\n5. **Net Earnings**: Finally, to find out how much the booth earned after paying the rent and costs, we subtract the total costs from the total earnings:\n   \\[\n   1000 \\text{ dollars (total earnings)} - 105 \\text{ dollars (total costs)} = 895 \\text{ dollars}\n   \\]\n\nIn conclusion, the booth earned **$895** over the 5-day activity after paying the rent and the cost of ingredients.']
+                        Number of expected agent calls: 1
+                        Number of actual agent calls: 1
+                        Efficiency of agent calls: 100.0 %
+                        Agents expected to be called: ['Reasoning Agent']
+                        Agents expected to be called: ['Reasoning Agent']
+                        Expected result set: ['895']
+                        Actual result set: ['895']
+                        Total output tokens: 429
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456936 --------------------------
+
+                
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456577 --------------------------
+                        User input: Evaluate Queenie earns $150 a day as a part-time clerk. She earns an additional $5 per hour as overtime pay. How much will Queenie receive for working 5 days with 4 hours overtime?
+                        Agent response: ["To evaluate how much Queenie will receive for working 5 days with 4 hours of overtime, we can break this down into two parts: her regular earnings for the days she works and her additional earnings from overtime.\n\n1. **Regular Earnings**: Queenie earns $150 per day. \n   - For 5 days: \n     \\[\n     5 \\text{ days} \\times 150 \\text{ dollars/day} = 750 \\text{ dollars}\n     \\]\n\n2. **Overtime Earnings**: Queenie earns an additional $5 per hour in overtime. \n   - For 4 hours of overtime:\n     \\[\n     4 \\text{ hours} \\times 5 \\text{ dollars/hour} = 20 \\text{ dollars}\n     \\]\n\n3. **Total Earnings**: To find Queenie's total earnings, we add her regular earnings to her overtime earnings:\n   \\[\n   750 \\text{ dollars} + 20 \\text{ dollars} = 770 \\text{ dollars}\n   \\]\n\nTherefore, Queenie will receive a total of **$770** for working 5 days with 4 hours of overtime."]
+                        Number of expected agent calls: 1
+                        Number of actual agent calls: 1
+                        Efficiency of agent calls: 100.0 %
+                        Agents expected to be called: ['Reasoning Agent']
+                        Agents expected to be called: ['Reasoning Agent']
+                        Expected result set: ['770']
+                        Actual result set: ['770']
+                        Total output tokens: 242
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456577 --------------------------
+
+                
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456228 --------------------------
+                        User input: What position on the Billboard Top 100 did Alison Moyet's late summer hit achieve?
+                        Agent response: ['\nRunning:\n - google_search(query=Alison Moyet Billboard Top 100 position late summer hit, max_results=5)\n\nAlison Moyet\'s late summer hit, "Situation," achieved a peak position of **73** on the Billboard Hot 100 chart in the United States. If you have any more questions or need further details on her music, feel free to ask!']
+                        Number of expected agent calls: 1
+                        Number of actual agent calls: 1
+                        Efficiency of agent calls: 100.0 %
+                        Agents expected to be called: ['Data Retrieval Agent']
+                        Agents expected to be called: ['Data Retrieval Agent']
+                        Expected result set: []
+                        Actual result set: []
+                        Total output tokens: 53
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456228 --------------------------
+
+                
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456716 --------------------------
+                        User input: Old Central's bell clapper was considered a trophy in which rivalry between Oklahoma and Oklahoma State?
+                        Agent response: ['The bell clapper from Old Central is associated with the rivalry known as "Bedlam," which is the athletic rivalry between the University of Oklahoma (OU) and Oklahoma State University (OSU). The trophy, often referred to as the "Bedlam Bell," symbolizes the historic and competitive nature of the matchups between the two universities, primarily in football and other sports. The bell clapper specifically was a significant symbol of this rivalry.']
+                        Number of expected agent calls: 1
+                        Number of actual agent calls: 1
+                        Efficiency of agent calls: 100.0 %
+                        Agents expected to be called: ['Data Retrieval Agent']
+                        Agents expected to be called: ['Data Retrieval Agent']
+                        Expected result set: ['Bedlam Series']
+                        Actual result set: []
+                        Total output tokens: 69
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456716 --------------------------
+
+                
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456927 --------------------------
+                        User input: 
+                Is below sentence hate or not-hate speech? Answer Yes or No
+                
+I personally think she sounds like a strangled cat.   
+         And Evaluate Janet starts driving across a lake in a speedboat going 30 miles per hour. Her sister follows in a sailboat that has a speed of 12 miles per hour. If the lake is 60 miles wide, how long does Janet have to wait on the other side for her sister to catch up?
+                        Agent response: ['No', 'To evaluate the time Janet has to wait for her sister, we first need to calculate the time it takes each of them to cross the lake.\n\n1. **Time for Janet in the speedboat**:\n   - Speed = 30 miles per hour\n   - Distance = 60 miles\n   \n   Time = Distance / Speed = 60 miles / 30 miles per hour = 2 hours.\n\n2. **Time for her sister in the sailboat**:\n   - Speed = 12 miles per hour\n   - Distance = 60 miles\n   \n   Time = Distance / Speed = 60 miles / 12 miles per hour = 5 hours.\n\n3. **Calculating the waiting time**:\n   Janet reaches the other side in 2 hours and her sister takes 5 hours to catch up. Therefore, the time Janet has to wait is:\n\n   Waiting time = Time taken by sister - Time taken by Janet \n   \n   = 5 hours - 2 hours = 3 hours.\n\nThus, Janet will have to wait for **3 hours** on the other side for her sister to catch up.']
+                        Number of expected agent calls: 2
+                        Number of actual agent calls: 2
+                        Efficiency of agent calls: 100.0 %
+                        Agents expected to be called: ['Text Classification Agent', 'Reasoning Agent']
+                        Agents expected to be called: ['Reasoning Agent', 'Text Classification Agent']
+                        Expected result set: ['Yes', '3']
+                        Actual result set: ['3']
+                        Total output tokens: 228
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456927 --------------------------
+
+                
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456307 --------------------------
+                        User input: 
+                Perform sentiment analysis on below sentence whether it is Happy or Sad. Answer Happy or Sad 
+Sentence: sad to say, she never lived to see it.   
+         And Find Which National Park includes the features Red Eagle Mountain and Going-to-the-Sun Road?
+                        Agent response: ['Sad', 'The features Red Eagle Mountain and Going-to-the-Sun Road are located in **Glacier National Park**, which is situated in the state of Montana, USA. Glacier National Park is renowned for its stunning landscapes, diverse wildlife, and spectacular mountain ranges, including the Rocky Mountains. The Going-to-the-Sun Road is a famous scenic highway that traverses the park and offers breathtaking views of the surrounding terrain.']
+                        Number of expected agent calls: 2
+                        Number of actual agent calls: 2
+                        Efficiency of agent calls: 100.0 %
+                        Agents expected to be called: ['Text Classification Agent', 'Data Retrieval Agent']
+                        Agents expected to be called: ['Data Retrieval Agent', 'Text Classification Agent']
+                        Expected result set: ['Sad', 'Glacier National Park']
+                        Actual result set: ['Sad', 'Glacier National Park']
+                        Total output tokens: 64
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456307 --------------------------
+
+                
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456159 --------------------------
+                        User input: 
+                Perform spam analysis on below sentence whether it is Spam or Not-spam. Answer Yes or No 
+Sentence: You have an outstanding tax refund of $2,560. Follow these instructions to claim your refund at: https://gov.taxrefunds.irs.   
+         And Find Which town, with a population of 7,126 according to the 2010 census, includes an unincorporated community of Glendale on the southern shore of Lake Winnipesaukee? And The last task is to Evaluate Ali had a stock of 800 books in his Room. He sold 60 on Monday, 10 on Tuesday, 20 on Wednesday, 44 on Thursday and 66 on Friday. How many books were not sold?
+                        Agent response: ['Yes', 'The town you are referring to is **Gilford**, New Hampshire. According to the 2010 census, Gilford had a population of 7,126, and it includes the unincorporated community of Glendale located on the southern shore of Lake Winnipesaukee. If you have any further questions about Gilford or related topics, feel free to ask!']
+                        Number of expected agent calls: 3
+                        Number of actual agent calls: 2
+                        Efficiency of agent calls: 66.66666666666666 %
+                        Agents expected to be called: ['Text Classification Agent', 'Data Retrieval Agent', 'Reasoning Agent']
+                        Agents expected to be called: ['Data Retrieval Agent', 'Text Classification Agent']
+                        Expected result set: ['Yes', 'Gilford', '600']
+                        Actual result set: ['Yes', 'Gilford']
+                        Total output tokens: 54
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456159 --------------------------
+
+                
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456289 --------------------------
+                        User input: 
+                Perform spam analysis on below sentence whether it is Spam or Not-spam. Answer Yes or No 
+Sentence: Hey sachin how are doing today its been long we spoke.   
+         And Find Are Joplin Regional Airport and Antonio Rivera Rodríguez Airport both located on the US mainland? And The last task is to Evaluate Tonya is in a hamburger eating contest. Each hamburger is 4 ounces. Last year the winner ate 84 ounces. How many hamburgers does she have to eat to beat last year's winner?
+                        Agent response: ['No', 'No, Antonio Rivera Rodríguez Airport (VQS) is located on the island of Vieques, which is part of Puerto Rico, a U.S. territory. In contrast, Joplin Regional Airport (JLN) is located in Joplin, Missouri, on the U.S. mainland. Therefore, only Joplin Regional Airport is on the U.S. mainland, while Antonio Rivera Rodríguez Airport is not.']
+                        Number of expected agent calls: 3
+                        Number of actual agent calls: 2
+                        Efficiency of agent calls: 66.66666666666666 %
+                        Agents expected to be called: ['Text Classification Agent', 'Data Retrieval Agent', 'Reasoning Agent']
+                        Agents expected to be called: ['Data Retrieval Agent', 'Text Classification Agent']
+                        Expected result set: ['No', 'no', '22']
+                        Actual result set: ['no', 'No']
+                        Total output tokens: 56
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456289 --------------------------
+
+                
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456286 --------------------------
+                        User input: 
+                Classify below sentence whether it is Positive or Negative. Answer Postive or Negative 
+Sentence: I am going to curse you very badly.   
+         And Find What is the top priority of the company that was formerly known as EyeTech Pharmaceuticals? And The last task is to Evaluate Bobby has 16 toy cars, and the number of cars he has increases by 50% every year. How many toy cars will Bobby have in three years?
+                        Agent response: ['Negative', '\nRunning:\n - google_search(query=EyeTech Pharmaceuticals top priority 2023, max_results=5)\n\n\nRunning:\n - google_search(query=EyePoint Pharmaceuticals former EyeTech Pharmaceuticals goals priorities 2023, max_results=5)\n\n\nRunning:\n - google_search(query=EyePoint Pharmaceuticals mission objectives 2023, max_results=5)\n\nThe company formerly known as EyeTech Pharmaceuticals is now called **EyePoint Pharmaceuticals**. Its top priority, as of 2023, is focused on developing and commercializing innovative therapeutics that improve the lives of patients suffering from serious eye disorders, specifically retinal diseases such as wet age-related macular degeneration (wet AMD) and non-proliferative diabetic retinopathy (NPDR). \n\nEyePoint Pharmaceuticals aims to make a significant impact on the treatment landscape for these conditions, as evidenced by their commitment to ongoing clinical trials and product developments, such as the EYP-1901 therapy currently in Phase 2 trials. Additionally, the company emphasizes a patient-centric approach in its mission. \n\nFor further details, you can refer to their official communications [here](https://investors.eyepointpharma.com/news-releases/news-release-details/eyepoint-pharmaceuticals-provides-business-update-and-key-2023).']
+                        Number of expected agent calls: 3
+                        Number of actual agent calls: 2
+                        Efficiency of agent calls: 66.66666666666666 %
+                        Agents expected to be called: ['Text Classification Agent', 'Data Retrieval Agent', 'Reasoning Agent']
+                        Agents expected to be called: ['Data Retrieval Agent', 'Text Classification Agent']
+                        Expected result set: ['Negative', 'oncology', '54']
+                        Actual result set: ['Negative']
+                        Total output tokens: 33
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456286 --------------------------
+
+                

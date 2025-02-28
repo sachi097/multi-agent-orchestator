@@ -1,0 +1,11 @@
+CLASSIFIER_MODEL=gpt-4o-mini
+CLASSIFIER_API_KEY=openai-api-key-here
+
+TEXT_CLASSIFIER_MODEL=gpt-4o-mini
+TEXT_CLASSIFIER_API_KEY=openai-api-key-here
+
+REASONING_MODEL=gpt-4o-mini
+REASONING_API_KEY=openai-api-key-here
+
+DATA_RETRIEVER_MODEL=gpt-4o-mini
+DATA_RETRIEVER_API_KEY=openai-api-key-here
