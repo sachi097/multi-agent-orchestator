@@ -117,7 +117,7 @@ class MainClass():
             print(f"Number of actual agent calls: {len(results)}")
             print(f"Efficiency of agent calls: {(len(results) / expectedResult.NUMBER_OF_AGENT_CALL) * 100} %")
             print(f"Agents expected to be called: {expectedResult.AGENTS}")
-            print(f"Agents expected to be called: {list(agents_called_set)}")
+            print(f"Agents actually called: {list(agents_called_set)}")
             print(f"Expected result set: {expectedResult.RESULTS}")
             print(f"Actual result set: {list(agent_result_set)}")
             print(f"Total output tokens: {total_output_token}")
@@ -132,7 +132,7 @@ class MainClass():
                         Number of actual agent calls: {len(results)}
                         Efficiency of agent calls: {(len(results) / expectedResult.NUMBER_OF_AGENT_CALL) * 100} %
                         Agents expected to be called: {expectedResult.AGENTS}
-                        Agents expected to be called: {list(agents_called_set)}
+                        Agents actually called: {list(agents_called_set)}
                         Expected result set: {expectedResult.RESULTS}
                         Actual result set: {list(agent_result_set)}
                         Total output tokens: {total_output_token}

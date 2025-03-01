@@ -50,7 +50,7 @@ DATA_RETRIEVER_API_KEY=openai-api-key-here
 ```
 python main.py
 ```
->PS: Please wait intially for dataset to be downloaded
+>PS: Please wait initially for dataset to be downloaded
 
 ## Playground with Streamlit and Fast API
 
@@ -81,7 +81,7 @@ Sentence: I am feeling so good today.
                         Number of actual agent calls: 1
                         Efficiency of agent calls: 100.0 %
                         Agents expected to be called: ['Text Classification Agent']
-                        Agents expected to be called: ['Text Classification Agent']
+                        Agents actually called: ['Text Classification Agent']
                         Expected result set: ['Positive']
                         Actual result set: ['Positive']
                         Total output tokens: 2
@@ -95,7 +95,7 @@ Sentence: I am feeling so good today.
                         Number of actual agent calls: 1
                         Efficiency of agent calls: 100.0 %
                         Agents expected to be called: ['Reasoning Agent']
-                        Agents expected to be called: ['Reasoning Agent']
+                        Agents actually called: ['Reasoning Agent']
                         Expected result set: ['895']
                         Actual result set: ['895']
                         Total output tokens: 359
