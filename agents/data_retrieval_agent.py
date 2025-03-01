@@ -77,7 +77,7 @@ class DataRetrievalAgent(Agent):
                         description=self.description,
                         instructions=[self.prompt_template],
                         # Add the knowledge base to the agent
-                        knowledge_base=self.retriever
+                        knowledge=self.retriever
                     )
 
         # Default inference configuration

@@ -1,5 +1,5 @@
 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-1234565 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-1234567 --------------------------
                         User input: Classify below Sentence whether it is Positive or Negative. Answer Positive or Negative 
 Sentence: I am feeling so good today.
                         Agent response: ['Positive']
@@ -7,152 +7,152 @@ Sentence: I am feeling so good today.
                         Number of actual agent calls: 1
                         Efficiency of agent calls: 100.0 %
                         Agents expected to be called: ['Text Classification Agent']
-                        Agents expected to be called: ['Text Classification Agent']
+                        Agents actually called: ['Text Classification Agent']
                         Expected result set: ['Positive']
                         Actual result set: ['Positive']
                         Total output tokens: 2
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-1234565 --------------------------
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-1234567 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456936 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456233 --------------------------
                         User input: Evaluate A carnival snack booth made $50 selling popcorn each day. It made three times as much selling cotton candy. For a 5-day activity, the booth has to pay $30 rent and $75 for the cost of the ingredients. How much did the booth earn for 5 days after paying the rent and the cost of ingredients?
-                        Agent response: ['To evaluate the earnings of the carnival snack booth after paying rent and ingredient costs, we can break down the calculations step by step.\n\n1. **Earnings from Popcorn**: The booth sells popcorn for $50 each day. Over 5 days, the total earnings from popcorn will be:\n   \\[\n   50 \\text{ dollars/day} \\times 5 \\text{ days} = 250 \\text{ dollars}\n   \\]\n\n2. **Earnings from Cotton Candy**: The booth makes three times as much from cotton candy as it does from popcorn. So, the daily earnings from cotton candy will be:\n   \\[\n   3 \\times 50 \\text{ dollars} = 150 \\text{ dollars/day}\n   \\]\n   Over 5 days, the total earnings from cotton candy will thus be:\n   \\[\n   150 \\text{ dollars/day} \\times 5 \\text{ days} = 750 \\text{ dollars}\n   \\]\n\n3. **Total Earnings**: The total earnings from both popcorn and cotton candy over the 5 days will be:\n   \\[\n   250 \\text{ dollars} (popcorn) + 750 \\text{ dollars} (cotton candy) = 1000 \\text{ dollars}\n   \\]\n\n4. **Costs**: The booth has to pay $30 for rent and $75 for ingredient costs. Therefore, the total costs will be:\n   \\[\n   30 \\text{ dollars (rent)} + 75 \\text{ dollars (ingredients)} = 105 \\text{ dollars}\n   \\]\n\n5. **Net Earnings**: Finally, to find out how much the booth earned after paying the rent and costs, we subtract the total costs from the total earnings:\n   \\[\n   1000 \\text{ dollars (total earnings)} - 105 \\text{ dollars (total costs)} = 895 \\text{ dollars}\n   \\]\n\nIn conclusion, the booth earned **$895** over the 5-day activity after paying the rent and the cost of ingredients.']
+                        Agent response: ['To evaluate the earnings of the carnival snack booth over the 5 days, we need to consider the revenue generated from popcorn and cotton candy, as well as the costs associated with running the booth.\n\n1. **Revenue from Popcorn:**\n   - The booth makes $50 each day selling popcorn.\n   - Over 5 days, the total revenue from popcorn is:\n     \\[\n     5 \\text{ days} \\times 50 \\text{ dollars/day} = 250 \\text{ dollars}\n     \\]\n\n2. **Revenue from Cotton Candy:**\n   - The booth makes three times as much selling cotton candy as it does from popcorn.\n   - Daily revenue from cotton candy is:\n     \\[\n     3 \\times 50 \\text{ dollars} = 150 \\text{ dollars}\n     \\]\n   - Over 5 days, the total revenue from cotton candy is:\n     \\[\n     5 \\text{ days} \\times 150 \\text{ dollars/day} = 750 \\text{ dollars}\n     \\]\n\n3. **Total Revenue:**\n   - Now, we can add the revenues from both snacks:\n     \\[\n     250 \\text{ dollars (popcorn)} + 750 \\text{ dollars (cotton candy)} = 1000 \\text{ dollars}\n     \\]\n\n4. **Costs:**\n   - The booth has fixed costs consisting of rent and the cost of ingredients:\n     - Rent: $30\n     - Cost of ingredients: $75\n   - Total costs are:\n     \\[\n     30 \\text{ dollars (rent)} + 75 \\text{ dollars (ingredients)} = 105 \\text{ dollars}\n     \\]\n\n5. **Net Earnings:**\n   - Finally, we calculate the net earnings by subtracting the total costs from the total revenue:\n     \\[\n     1000 \\text{ dollars (total revenue)} - 105 \\text{ dollars (total costs)} = 895 \\text{ dollars}\n     \\]\n\nTherefore, the booth earned **$895** after paying the rent and the cost of ingredients over the 5-day activity.']
                         Number of expected agent calls: 1
                         Number of actual agent calls: 1
                         Efficiency of agent calls: 100.0 %
                         Agents expected to be called: ['Reasoning Agent']
-                        Agents expected to be called: ['Reasoning Agent']
+                        Agents actually called: ['Reasoning Agent']
                         Expected result set: ['895']
                         Actual result set: ['895']
-                        Total output tokens: 429
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456936 --------------------------
+                        Total output tokens: 441
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456233 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456577 --------------------------
-                        User input: Evaluate Queenie earns $150 a day as a part-time clerk. She earns an additional $5 per hour as overtime pay. How much will Queenie receive for working 5 days with 4 hours overtime?
-                        Agent response: ["To evaluate how much Queenie will receive for working 5 days with 4 hours of overtime, we can break this down into two parts: her regular earnings for the days she works and her additional earnings from overtime.\n\n1. **Regular Earnings**: Queenie earns $150 per day. \n   - For 5 days: \n     \\[\n     5 \\text{ days} \\times 150 \\text{ dollars/day} = 750 \\text{ dollars}\n     \\]\n\n2. **Overtime Earnings**: Queenie earns an additional $5 per hour in overtime. \n   - For 4 hours of overtime:\n     \\[\n     4 \\text{ hours} \\times 5 \\text{ dollars/hour} = 20 \\text{ dollars}\n     \\]\n\n3. **Total Earnings**: To find Queenie's total earnings, we add her regular earnings to her overtime earnings:\n   \\[\n   750 \\text{ dollars} + 20 \\text{ dollars} = 770 \\text{ dollars}\n   \\]\n\nTherefore, Queenie will receive a total of **$770** for working 5 days with 4 hours of overtime."]
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456429 --------------------------
+                        User input: Evaluate Quinn catches twice the amount of frogs as Alster who caught 2.  Bret catches three times the amount of frogs as Quinn.  How many frogs did Bret catch?
+                        Agent response: ["To solve the problem, we need to determine the number of frogs that each person caught based on the information provided.\n\n1. **Alster's Catch**: Alster caught 2 frogs. \n   \n2. **Quinn's Catch**: Quinn catches twice the amount of frogs as Alster. Therefore, Quinn's catch can be calculated as:\n   \\[\n   \\text{Quinn's catch} = 2 \\times \\text{Alster's catch} = 2 \\times 2 = 4 \\text{ frogs}\n   \\]\n\n3. **Bret's Catch**: Bret catches three times the amount of frogs as Quinn. We can now find out how many frogs Bret caught:\n   \\[\n   \\text{Bret's catch} = 3 \\times \\text{Quinn's catch} = 3 \\times 4 = 12 \\text{ frogs}\n   \\]\n\nThus, Bret caught **12 frogs**. This step-by-step breakdown clearly shows how we derived the total number of frogs Bret caught based on the catches of Alster and Quinn."]
                         Number of expected agent calls: 1
                         Number of actual agent calls: 1
                         Efficiency of agent calls: 100.0 %
                         Agents expected to be called: ['Reasoning Agent']
-                        Agents expected to be called: ['Reasoning Agent']
-                        Expected result set: ['770']
-                        Actual result set: ['770']
-                        Total output tokens: 242
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456577 --------------------------
+                        Agents actually called: ['Reasoning Agent']
+                        Expected result set: ['12']
+                        Actual result set: ['12']
+                        Total output tokens: 225
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456429 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456228 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456252 --------------------------
                         User input: What position on the Billboard Top 100 did Alison Moyet's late summer hit achieve?
-                        Agent response: ['\nRunning:\n - google_search(query=Alison Moyet Billboard Top 100 position late summer hit, max_results=5)\n\nAlison Moyet\'s late summer hit, "Situation," achieved a peak position of **73** on the Billboard Hot 100 chart in the United States. If you have any more questions or need further details on her music, feel free to ask!']
+                        Agent response: ['\nRunning:\n - google_search(query=Alison Moyet Billboard Top 100 position late summer hit, max_results=5)\n\nAlison Moyet\'s song "Situation," released as a single in North America, achieved a peak position of **number 73** on the Billboard Hot 100 chart in the United States. This song was part of the synth-pop genre and was released in 1982. If you have any other questions or need further information, feel free to ask!']
                         Number of expected agent calls: 1
                         Number of actual agent calls: 1
                         Efficiency of agent calls: 100.0 %
                         Agents expected to be called: ['Data Retrieval Agent']
-                        Agents expected to be called: ['Data Retrieval Agent']
+                        Agents actually called: ['Data Retrieval Agent']
                         Expected result set: []
                         Actual result set: []
-                        Total output tokens: 53
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456228 --------------------------
+                        Total output tokens: 74
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456252 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456716 --------------------------
-                        User input: Old Central's bell clapper was considered a trophy in which rivalry between Oklahoma and Oklahoma State?
-                        Agent response: ['The bell clapper from Old Central is associated with the rivalry known as "Bedlam," which is the athletic rivalry between the University of Oklahoma (OU) and Oklahoma State University (OSU). The trophy, often referred to as the "Bedlam Bell," symbolizes the historic and competitive nature of the matchups between the two universities, primarily in football and other sports. The bell clapper specifically was a significant symbol of this rivalry.']
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456597 --------------------------
+                        User input: Which National Park includes the features Red Eagle Mountain and Going-to-the-Sun Road?
+                        Agent response: ['The features Red Eagle Mountain and Going-to-the-Sun Road are located in **Glacier National Park**, which is situated in Montana, USA. Glacier National Park is renowned for its stunning landscapes, including mountains, glaciers, and lush ecosystems. Going-to-the-Sun Road is particularly famous as it traverses the park and provides breathtaking views of the surrounding scenery, making it one of the most scenic drives in the country.']
                         Number of expected agent calls: 1
                         Number of actual agent calls: 1
                         Efficiency of agent calls: 100.0 %
                         Agents expected to be called: ['Data Retrieval Agent']
-                        Agents expected to be called: ['Data Retrieval Agent']
-                        Expected result set: ['Bedlam Series']
-                        Actual result set: []
-                        Total output tokens: 69
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456716 --------------------------
+                        Agents actually called: ['Data Retrieval Agent']
+                        Expected result set: ['Glacier National Park']
+                        Actual result set: ['Glacier National Park']
+                        Total output tokens: 64
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456597 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456927 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456308 --------------------------
                         User input: 
                 Is below sentence hate or not-hate speech? Answer Yes or No
                 
 I personally think she sounds like a strangled cat.   
-         And Evaluate Janet starts driving across a lake in a speedboat going 30 miles per hour. Her sister follows in a sailboat that has a speed of 12 miles per hour. If the lake is 60 miles wide, how long does Janet have to wait on the other side for her sister to catch up?
-                        Agent response: ['No', 'To evaluate the time Janet has to wait for her sister, we first need to calculate the time it takes each of them to cross the lake.\n\n1. **Time for Janet in the speedboat**:\n   - Speed = 30 miles per hour\n   - Distance = 60 miles\n   \n   Time = Distance / Speed = 60 miles / 30 miles per hour = 2 hours.\n\n2. **Time for her sister in the sailboat**:\n   - Speed = 12 miles per hour\n   - Distance = 60 miles\n   \n   Time = Distance / Speed = 60 miles / 12 miles per hour = 5 hours.\n\n3. **Calculating the waiting time**:\n   Janet reaches the other side in 2 hours and her sister takes 5 hours to catch up. Therefore, the time Janet has to wait is:\n\n   Waiting time = Time taken by sister - Time taken by Janet \n   \n   = 5 hours - 2 hours = 3 hours.\n\nThus, Janet will have to wait for **3 hours** on the other side for her sister to catch up.']
+         And Evaluate Tommy is making 12 loaves of bread. He needs 4 pounds of flour per loaf. A 10-pound bag of flour costs $10 and a 12-pound bag costs $13. When he is done making his bread, he has no use for flour and so he will throw away whatever is left. How much does he spend on flour if he buys the cheapest flour to get enough?
+                        Agent response: ['No', 'To determine how much Tommy will spend on flour, we first need to calculate how much flour he requires for 12 loaves of bread. \n\n1. **Flour needed per loaf**: 4 pounds\n2. **Total loaves**: 12 loaves\n\nSo, the total amount of flour needed is:\n\n\\[\n\\text{Total flour} = \\text{Flour per loaf} \\times \\text{Total loaves} = 4 \\, \\text{pounds/loaf} \\times 12 \\, \\text{loaves} = 48 \\, \\text{pounds}\n\\]\n\nNext, we look at the available flour bag options: \n\n- A **10-pound bag** costs $10.\n- A **12-pound bag** costs $13.\n\nTo determine how many bags Tommy will need, we can calculate how many of each bag type he would need for 48 pounds of flour.\n\n1. Using 10-pound bags:\n   - Number of 10-pound bags required = \\( \\frac{48 \\, \\text{pounds}}{10 \\, \\text{pounds/bag}} = 4.8 \\) bags.\n   - Since he cannot buy a fraction of a bag, he would need to buy 5 bags.\n   - Total weight from 5 bags = \\( 5 \\times 10 = 50 \\, \\text{pounds} \\).\n   - Total cost = \\( 5 \\times 10 = 50 \\, \\text{dollars} \\).\n\n2. Using 12-pound bags:\n   - Number of 12-pound bags required = \\( \\frac{48 \\, \\text{pounds}}{12 \\, \\text{pounds/bag}} = 4 \\) bags.\n   - Total weight from 4 bags = \\( 4 \\times 12 = 48 \\, \\text{pounds} \\).\n   - Total cost = \\( 4 \\times 13 = 52 \\, \\text{dollars} \\).\n\nNow let’s compare the costs:\n- Buying 5 bags of 10-pound flour costs $50.\n- Buying 4 bags of 12-pound flour costs $52.\n\nSince the cost for the 10-pound bags is less, Tommy should buy the 10-pound bags.\n\nTherefore, Tommy spends **$50** on flour by purchasing the cheapest option to obtain enough flour for his bread.']
                         Number of expected agent calls: 2
                         Number of actual agent calls: 2
                         Efficiency of agent calls: 100.0 %
                         Agents expected to be called: ['Text Classification Agent', 'Reasoning Agent']
-                        Agents expected to be called: ['Reasoning Agent', 'Text Classification Agent']
-                        Expected result set: ['Yes', '3']
-                        Actual result set: ['3']
-                        Total output tokens: 228
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456927 --------------------------
+                        Agents actually called: ['Text Classification Agent', 'Reasoning Agent']
+                        Expected result set: ['Yes', '50']
+                        Actual result set: ['50']
+                        Total output tokens: 506
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456308 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456307 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-1234563710 --------------------------
                         User input: 
                 Perform sentiment analysis on below sentence whether it is Happy or Sad. Answer Happy or Sad 
 Sentence: sad to say, she never lived to see it.   
-         And Find Which National Park includes the features Red Eagle Mountain and Going-to-the-Sun Road?
-                        Agent response: ['Sad', 'The features Red Eagle Mountain and Going-to-the-Sun Road are located in **Glacier National Park**, which is situated in the state of Montana, USA. Glacier National Park is renowned for its stunning landscapes, diverse wildlife, and spectacular mountain ranges, including the Rocky Mountains. The Going-to-the-Sun Road is a famous scenic highway that traverses the park and offers breathtaking views of the surrounding terrain.']
+         And Find Fatherfucker is a studio album by which Canadian Singer?
+                        Agent response: ['Sad. \n\n"Fatherfucker" is a studio album by the Canadian singer-songwriter Peaches.', '\nRunning:\n - google_search(query=Find Fatherfucker studio album Canadian singer, max_results=1)\n\nThe album **"Fatherfucker"** is the third studio album by Canadian singer **Peaches**. It was released on September 23, 2003. If you\'d like to know more about Peaches or the album itself, feel free to ask!']
                         Number of expected agent calls: 2
                         Number of actual agent calls: 2
                         Efficiency of agent calls: 100.0 %
                         Agents expected to be called: ['Text Classification Agent', 'Data Retrieval Agent']
-                        Agents expected to be called: ['Data Retrieval Agent', 'Text Classification Agent']
-                        Expected result set: ['Sad', 'Glacier National Park']
-                        Actual result set: ['Sad', 'Glacier National Park']
-                        Total output tokens: 64
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456307 --------------------------
+                        Agents actually called: ['Text Classification Agent', 'Data Retrieval Agent']
+                        Expected result set: ['Sad', 'Peaches']
+                        Actual result set: ['Peaches', 'Sad']
+                        Total output tokens: 76
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-1234563710 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456159 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456102 --------------------------
                         User input: 
                 Perform spam analysis on below sentence whether it is Spam or Not-spam. Answer Yes or No 
 Sentence: You have an outstanding tax refund of $2,560. Follow these instructions to claim your refund at: https://gov.taxrefunds.irs.   
-         And Find Which town, with a population of 7,126 according to the 2010 census, includes an unincorporated community of Glendale on the southern shore of Lake Winnipesaukee? And The last task is to Evaluate Ali had a stock of 800 books in his Room. He sold 60 on Monday, 10 on Tuesday, 20 on Wednesday, 44 on Thursday and 66 on Friday. How many books were not sold?
-                        Agent response: ['Yes', 'The town you are referring to is **Gilford**, New Hampshire. According to the 2010 census, Gilford had a population of 7,126, and it includes the unincorporated community of Glendale located on the southern shore of Lake Winnipesaukee. If you have any further questions about Gilford or related topics, feel free to ask!']
+         And Find What is the birthdate of this American sports interviewer who works for ESPN and hosts Football Sunday on ESPN Radio? And The last task is to Evaluate A married couple opened a savings account. The wife committed to saving $100 every week while the husband committed to saving $225 every month. After 4 months of savings, they decided to invest half of their money in buying stocks. Each share of stocks costs $50. How many shares of stocks can they buy?
+                        Agent response: ['Yes\n\nFor the birthdate of the American sports interviewer who works for ESPN and hosts Football Sunday on ESPN Radio, that would be Adam Schefter, whose birthdate is April 21, 1966.\n\nFor the evaluation of the savings account:  \nThe wife saves $100 every week for 4 months (approximately 16 weeks), which equals $1,600.  \nThe husband saves $225 every month for 4 months, which equals $900.  \nTogether, they have saved $1,600 + $900 = $2,500.  \nThey decided to invest half of their savings in stocks: $2,500 / 2 = $1,250.  \nAt $50 per share, they can buy $1,250 / $50 = 25 shares of stocks.', '\nRunning:\n - google_search(query=American sports interviewer ESPN Football Sunday birthdate, max_results=5)\n\nThe American sports interviewer who hosts *Football Sunday* on ESPN Radio is likely **Chris Berman**. His birthdate is **May 10, 1955**. \n\nFor more information, you can check his [Wikipedia page](https://en.wikipedia.org/wiki/Chris_Berman).']
                         Number of expected agent calls: 3
                         Number of actual agent calls: 2
                         Efficiency of agent calls: 66.66666666666666 %
                         Agents expected to be called: ['Text Classification Agent', 'Data Retrieval Agent', 'Reasoning Agent']
-                        Agents expected to be called: ['Data Retrieval Agent', 'Text Classification Agent']
-                        Expected result set: ['Yes', 'Gilford', '600']
-                        Actual result set: ['Yes', 'Gilford']
-                        Total output tokens: 54
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456159 --------------------------
+                        Agents actually called: ['Text Classification Agent', 'Data Retrieval Agent']
+                        Expected result set: ['Yes', 'August 12, 1972', '25']
+                        Actual result set: ['25', 'Yes']
+                        Total output tokens: 223
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456102 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456289 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456767 --------------------------
                         User input: 
                 Perform spam analysis on below sentence whether it is Spam or Not-spam. Answer Yes or No 
 Sentence: Hey sachin how are doing today its been long we spoke.   
-         And Find Are Joplin Regional Airport and Antonio Rivera Rodríguez Airport both located on the US mainland? And The last task is to Evaluate Tonya is in a hamburger eating contest. Each hamburger is 4 ounces. Last year the winner ate 84 ounces. How many hamburgers does she have to eat to beat last year's winner?
-                        Agent response: ['No', 'No, Antonio Rivera Rodríguez Airport (VQS) is located on the island of Vieques, which is part of Puerto Rico, a U.S. territory. In contrast, Joplin Regional Airport (JLN) is located in Joplin, Missouri, on the U.S. mainland. Therefore, only Joplin Regional Airport is on the U.S. mainland, while Antonio Rivera Rodríguez Airport is not.']
+         And Find which movie was directed by Damien Chazelle and won the 2017 Guild of Music Supervisors Awards? And The last task is to Evaluate Dave bought 8 books about animals, 6 books about outer space, and 3 books about trains to keep him busy over the holidays. Each book cost $6. How much did Dave spend on the books?
+                        Agent response: ['No', '\nRunning:\n - google_search(query=Damien Chazelle movie won 2017 Guild of Music Supervisors Awards, max_results=5)\n\nThe movie directed by Damien Chazelle that won the 2017 Guild of Music Supervisors Awards is **La La Land**. This acclaimed film, released in 2016, is a musical romantic drama that highlights the struggles of artists in Los Angeles. La La Land received widespread recognition and numerous awards for its music, direction, and cinematography.\n\nFor more detailed information about the awards it received, you can check the full list of winners [here](https://www.billboard.com/music/music-news/guild-of-music-supervisors-awards-winners-7694148/).']
                         Number of expected agent calls: 3
                         Number of actual agent calls: 2
                         Efficiency of agent calls: 66.66666666666666 %
                         Agents expected to be called: ['Text Classification Agent', 'Data Retrieval Agent', 'Reasoning Agent']
-                        Agents expected to be called: ['Data Retrieval Agent', 'Text Classification Agent']
-                        Expected result set: ['No', 'no', '22']
-                        Actual result set: ['no', 'No']
-                        Total output tokens: 56
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456289 --------------------------
+                        Agents actually called: ['Text Classification Agent', 'Data Retrieval Agent']
+                        Expected result set: ['No', 'directed by Damien Chazelle', '102']
+                        Actual result set: ['No', 'directed by Damien Chazelle']
+                        Total output tokens: 123
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456767 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456286 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456766 --------------------------
                         User input: 
                 Classify below sentence whether it is Positive or Negative. Answer Postive or Negative 
 Sentence: I am going to curse you very badly.   
-         And Find What is the top priority of the company that was formerly known as EyeTech Pharmaceuticals? And The last task is to Evaluate Bobby has 16 toy cars, and the number of cars he has increases by 50% every year. How many toy cars will Bobby have in three years?
-                        Agent response: ['Negative', '\nRunning:\n - google_search(query=EyeTech Pharmaceuticals top priority 2023, max_results=5)\n\n\nRunning:\n - google_search(query=EyePoint Pharmaceuticals former EyeTech Pharmaceuticals goals priorities 2023, max_results=5)\n\n\nRunning:\n - google_search(query=EyePoint Pharmaceuticals mission objectives 2023, max_results=5)\n\nThe company formerly known as EyeTech Pharmaceuticals is now called **EyePoint Pharmaceuticals**. Its top priority, as of 2023, is focused on developing and commercializing innovative therapeutics that improve the lives of patients suffering from serious eye disorders, specifically retinal diseases such as wet age-related macular degeneration (wet AMD) and non-proliferative diabetic retinopathy (NPDR). \n\nEyePoint Pharmaceuticals aims to make a significant impact on the treatment landscape for these conditions, as evidenced by their commitment to ongoing clinical trials and product developments, such as the EYP-1901 therapy currently in Phase 2 trials. Additionally, the company emphasizes a patient-centric approach in its mission. \n\nFor further details, you can refer to their official communications [here](https://investors.eyepointpharma.com/news-releases/news-release-details/eyepoint-pharmaceuticals-provides-business-update-and-key-2023).']
+         And Find When did the monarch of Norway ascend to the throne? And The last task is to Evaluate Karen is constantly trying to stop the raccoons from getting in her trash. The first lock she tries stalls them for 5 minutes. The next lock stalls them for 3 minutes less than three times as long as the first lock. When Karen tries both locks at once, it stalled the raccoons for five times as long as the second lock alone. How long is that?
+                        Agent response: ['Negative', "\nRunning:\n - google_search(query=monarch of Norway ascended to the throne date, max_results=5)\n\nThe current monarch of Norway, **King Harald V**, ascended to the throne on **January 17, 1991**, following the death of his father, King Olav V. He was formally blessed in a ceremony on June 23, 1991. King Harald V has been serving as king since then. \n\nFor more information, you can refer to the [Royal House of Norway's official page](https://www.royalcourt.no/artikkel.html?tid=28731&sek=27277) or check out his [Wikipedia page](https://en.wikipedia.org/wiki/Harald_V)."]
                         Number of expected agent calls: 3
                         Number of actual agent calls: 2
                         Efficiency of agent calls: 66.66666666666666 %
                         Agents expected to be called: ['Text Classification Agent', 'Data Retrieval Agent', 'Reasoning Agent']
-                        Agents expected to be called: ['Data Retrieval Agent', 'Text Classification Agent']
-                        Expected result set: ['Negative', 'oncology', '54']
+                        Agents actually called: ['Text Classification Agent', 'Data Retrieval Agent']
+                        Expected result set: ['Negative', '17 January 1991', '60']
                         Actual result set: ['Negative']
-                        Total output tokens: 33
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456286 --------------------------
+                        Total output tokens: 129
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456766 --------------------------
 
                 
