@@ -56,6 +56,7 @@ class Orchestrator:
                                 params: Dict[str, Any]) -> Union[
                                     ConversationMessage, AsyncIterable[Any]
                                 ]:
+        original_user_input = params['original_user_input']
         user_input = params['user_input']
         user_id = params['user_id']
         session_id = params['session_id']
@@ -69,7 +70,9 @@ class Orchestrator:
         agent_selected = classifier_result.agent_selected
         agent_chat_history = await self.storage.fetch_chat(user_id, session_id, agent_selected.id)
 
-        response = await agent_selected.handle_request(user_input,
+        response = await agent_selected.handle_request(
+                                                   original_user_input,
+                                                   user_input,
                                                    user_id,
                                                    session_id,
                                                    agent_chat_history,
@@ -93,7 +96,8 @@ class Orchestrator:
             raise error
         
     async def agent_handle_request(self,
-                               user_input: str,
+                               original_user_input: str,
+                               current_user_input: str,
                                user_id: str,
                                session_id: str,
                                classifier_result: ClassifierResult,
@@ -101,7 +105,8 @@ class Orchestrator:
         """Process agent response and handle chat storage."""
         try:
             agent_response = await self.dispatch_request_to_agent({
-                "user_input": user_input,
+                "original_user_input": original_user_input,
+                "user_input": current_user_input,
                 "user_id": user_id,
                 "session_id": session_id,
                 "classifier_result": classifier_result,
@@ -113,8 +118,10 @@ class Orchestrator:
             await self.save_message(
                 ConversationMessage(
                     role=ConversationRole.USER.value,
-                    tokens=len(user_input.split(' ')),
-                    content=[{'text': user_input}]
+                    original_user_input=original_user_input,
+                    short_output="",
+                    tokens=len(current_user_input.split(' ')),
+                    content=[{'text': current_user_input}]
                 ),
                 user_id,
                 session_id,
@@ -146,6 +153,8 @@ class Orchestrator:
 
         try:
             logger.info(f"User input: {user_input}")
+            self.classifier.set_original_user_input(user_input)
+            last_output_from_agent = ""
             final_response: List[FinalResponse] = []
             #---------------------Main Core Logic of Orchestrator Routing-------------------------
             while True:
@@ -153,7 +162,9 @@ class Orchestrator:
                 if not classifier_result.agent_selected:
                     return AgentResponse(
                         output=ConversationMessage(
+                            original_user_input=self.classifier.original_user_input,
                             role=ConversationRole.ASSISTANT.value,
+                            short_output="",
                             tokens=0,
                             content=[{'text': self.config.AGENT_NOT_SELECTED_LOG}]
                         ),
@@ -162,7 +173,11 @@ class Orchestrator:
 
                 logger.info(f"Agent Selected: {classifier_result.agent_selected.name} and Accuracy Score: {classifier_result.accuracy}")
 
+                user_input = classifier_result.input + "\n" + last_output_from_agent
+                logger.info(f"Current Input to be executed: {user_input}")
+
                 agent_output = await self.agent_handle_request(
+                        self.classifier.original_user_input,
                         user_input, 
                         user_id,
                         session_id, 
@@ -191,10 +206,12 @@ class Orchestrator:
                     logger.info(f"No next tasks detected")
                     break
                 else:
+                    last_output_from_agent = agent_output.output.short_output
                     if classifier_result.next_action_input == "unkown":
                         user_input = current_output
                     else:
                         user_input = classifier_result.next_action_input
+                    self.classifier.set_sutask_input(user_input)
                     logger.info(f"Performing next action with agent: {classifier_result.next_action}")
                     logger.info(f"Providing input to the agent: {user_input}")
             

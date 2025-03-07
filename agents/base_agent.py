@@ -2,6 +2,7 @@ from typing import Dict, List, Union, AsyncIterable, Optional, Any
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from orchestrator_types import ConversationMessage
+import re
 
 @dataclass
 class AgentResponse:
@@ -42,6 +43,7 @@ class Agent(ABC):
     @abstractmethod
     async def handle_request(
         self,
+        original_user_input: str,
         input_text: str,
         user_id: str,
         session_id: str,
@@ -49,3 +51,29 @@ class Agent(ABC):
         additional_params: Optional[Dict[str, str]] = None,
     ) -> Union[ConversationMessage, AsyncIterable[Any]]:
         pass
+
+    def set_history(self, messages: List[ConversationMessage]) -> None:
+        self.chat_history = self.format_messages(messages)
+
+    @staticmethod
+    def format_messages(messages: List[ConversationMessage]) -> str:
+        return "\n".join([
+            f"Original User Input: {message.original_user_input}\n" +
+            f"{message.role}: {' '.join([message.content[0]['text']])}" for message in messages
+        ])
+
+    def update_system_prompt(self) -> None:
+        all_variables: Dict[str, Union[str, List[str]]] = {
+            "ORIGINAL_USER_INPUT": self.original_user_input,
+            "SUBTASK_INPUT": self.subtask_input,
+            "HISTORY": self.chat_history
+        }
+        self.system_prompt = self.replace_placeholders(self.prompt_template, all_variables)
+
+    @staticmethod
+    def replace_placeholders(template: str, variables: Dict[str, Union[str, List[str]]]) -> str:
+
+        return re.sub(r'{{(\w+)}}',
+                      lambda m: '\n'.join(variables.get(m.group(1), [m.group(0)]))
+                      if isinstance(variables.get(m.group(1)), list)
+                      else variables.get(m.group(1), m.group(0)), template)

@@ -8,6 +8,7 @@ from agents import Agent
 
 @dataclass
 class ClassifierResult:
+    input: str
     agent_selected: Optional[Agent]
     accuracy: float
     action: str 
@@ -17,20 +18,31 @@ class ClassifierResult:
 class Classifier(ABC):
     def __init__(self):
         self.agent_descriptions = ""
+        self.original_user_input = ""
+        self.subtask_input = ""
         self.chat_history = ""
-        response_format = {"agent_selected":"", "accuracy":"", "input":"", "action":"", "next_action":"", "next_action_input": ""}
         self.prompt_template = """
                                     You are AgentMatcher, an intelligent assistant designed to analyze user queries and match them with
                                     the most suitable agent or department. Your task is to understand the user's request,
                                     identify key entities and intents, and determine which agent or department would be best equipped
-                                    to handle the query. You should divided the query into sub-tasks if needed and chain these tasks with suitable agents to achieve final answer.
+                                    to handle the query. You should divided the query into sub-tasks if needed and chain these tasks with suitable agents to achieve final answer.  
 
                                     Important: The user's input may be a follow-up response to a previous interaction.
                                     The conversation history, including the name of the previously selected agent, is provided.
                                     If the user's input appears to be a continuation of the previous conversation
                                     (e.g., "yes", "ok", "I want to know more", "1"), select the same agent as before.
+                                    
+                                    Below is original user input
+                                    <original_user_input>
+                                    {{ORIGINAL_USER_INPUT}}
+                                    </orignal_user_input>
 
-                                    Analyze the user's input and categorize it into one of the following agent types:
+                                    Below is current sub-task input
+                                    <subtask_input>
+                                    {{SUBTASK_INPUT}}
+                                    </subtask_input>
+
+                                    Analyze the user's input then divide the input query into sub-tasks if needed and pick apporpriate agent for the sub-task from the following agent types:
                                     <agents>
                                     {{AGENT_DESCRIPTIONS}}
                                     </agents>
@@ -135,12 +147,17 @@ class Classifier(ABC):
                                         {{AGENT_DESCRIPTIONS}}
                                         </agents>
                                     - If there are actions to be taken next, then for the next agent selected provide the input in "next_action_input"
+                                    - You will have original user input and the current sub-task input, Check if all the goals of the original user input is met, if not make sure to analyse current sub-task input, provide answer for it then determine remaining task that needs to be done and feed it as "next-agent-input" and select "next_action" to achieve complete goal of the user input.
                                     If you are unable to select an agent put "unknown"
-                                    - You will return the agent name in the form of {response_format}
-                                    - Always return valid JSON like {response_format} and nothing else. 
                                     """
         self.system_prompt = ""
         self.agents: Dict[str, Agent] = {}
+
+    def set_original_user_input(self, user_input: str):
+        self.original_user_input = user_input
+
+    def set_sutask_input(self, subtask_input: str):
+        self.subtask_input = subtask_input
 
     def set_agents(self, agents: Dict[str, Agent]) -> None:
         self.agent_descriptions = "\n\n".join(f"{agent.id}:{agent.description}"
@@ -153,6 +170,7 @@ class Classifier(ABC):
     @staticmethod
     def format_messages(messages: List[ConversationMessage]) -> str:
         return "\n".join([
+            f"Original User Input: {message.original_user_input}\n" +
             f"{message.role}: {' '.join([message.content[0]['text']])}" for message in messages
         ])
 
@@ -169,6 +187,8 @@ class Classifier(ABC):
 
     def update_system_prompt(self) -> None:
         all_variables: Dict[str, Union[str, List[str]]] = {
+            "ORIGINAL_USER_INPUT": self.original_user_input,
+            "SUBTASK_INPUT": self.subtask_input,
             "AGENT_DESCRIPTIONS": self.agent_descriptions,
             "HISTORY": self.chat_history,
         }

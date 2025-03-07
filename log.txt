@@ -2,157 +2,107 @@
                         ----------------------------- Start of Evaluation Metric for Request : test-user-1-1234567 --------------------------
                         User input: Classify below Sentence whether it is Positive or Negative. Answer Positive or Negative 
 Sentence: I am feeling so good today.
-                        Agent response: ['Positive']
-                        Number of expected agent calls: 1
-                        Number of actual agent calls: 1
-                        Efficiency of agent calls: 100.0 %
-                        Agents expected to be called: ['Text Classification Agent']
-                        Agents actually called: ['Text Classification Agent']
-                        Expected result set: ['Positive']
-                        Actual result set: ['Positive']
-                        Total output tokens: 2
+                        Agent response: ["The sentence expresses a positive sentiment about the speaker's feelings."]
+                        Number of agent calls: 1
+                        Agents called: ['Text Classification Agent']
+                        Total output tokens: 10
                         ----------------------------- End of Evaluation Metric for Request : test-user-1-1234567 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456233 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456436 --------------------------
                         User input: Evaluate A carnival snack booth made $50 selling popcorn each day. It made three times as much selling cotton candy. For a 5-day activity, the booth has to pay $30 rent and $75 for the cost of the ingredients. How much did the booth earn for 5 days after paying the rent and the cost of ingredients?
-                        Agent response: ['To evaluate the earnings of the carnival snack booth over the 5 days, we need to consider the revenue generated from popcorn and cotton candy, as well as the costs associated with running the booth.\n\n1. **Revenue from Popcorn:**\n   - The booth makes $50 each day selling popcorn.\n   - Over 5 days, the total revenue from popcorn is:\n     \\[\n     5 \\text{ days} \\times 50 \\text{ dollars/day} = 250 \\text{ dollars}\n     \\]\n\n2. **Revenue from Cotton Candy:**\n   - The booth makes three times as much selling cotton candy as it does from popcorn.\n   - Daily revenue from cotton candy is:\n     \\[\n     3 \\times 50 \\text{ dollars} = 150 \\text{ dollars}\n     \\]\n   - Over 5 days, the total revenue from cotton candy is:\n     \\[\n     5 \\text{ days} \\times 150 \\text{ dollars/day} = 750 \\text{ dollars}\n     \\]\n\n3. **Total Revenue:**\n   - Now, we can add the revenues from both snacks:\n     \\[\n     250 \\text{ dollars (popcorn)} + 750 \\text{ dollars (cotton candy)} = 1000 \\text{ dollars}\n     \\]\n\n4. **Costs:**\n   - The booth has fixed costs consisting of rent and the cost of ingredients:\n     - Rent: $30\n     - Cost of ingredients: $75\n   - Total costs are:\n     \\[\n     30 \\text{ dollars (rent)} + 75 \\text{ dollars (ingredients)} = 105 \\text{ dollars}\n     \\]\n\n5. **Net Earnings:**\n   - Finally, we calculate the net earnings by subtracting the total costs from the total revenue:\n     \\[\n     1000 \\text{ dollars (total revenue)} - 105 \\text{ dollars (total costs)} = 895 \\text{ dollars}\n     \\]\n\nTherefore, the booth earned **$895** after paying the rent and the cost of ingredients over the 5-day activity.']
-                        Number of expected agent calls: 1
-                        Number of actual agent calls: 1
-                        Efficiency of agent calls: 100.0 %
-                        Agents expected to be called: ['Reasoning Agent']
-                        Agents actually called: ['Reasoning Agent']
-                        Expected result set: ['895']
-                        Actual result set: ['895']
-                        Total output tokens: 441
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456233 --------------------------
+                        Agent response: ["First, let's calculate the booth's earnings from selling popcorn and cotton candy. \n\n1. **Daily Earnings on Popcorn**: $50 per day. \n   For 5 days: \n   5 days x $50/day = $250 from popcorn.\n\n2. **Daily Earnings on Cotton Candy**: Three times as much as popcorn. \n   Daily cotton candy earnings: $50 x 3 = $150 per day. \n   For 5 days: \n   5 days x $150/day = $750 from cotton candy.\n\n3. **Total Earnings for 5 Days**: \n   Total earnings = $250 (popcorn) + $750 (cotton candy) = $1000.\n\n4. **Costs**: \n   - Rent: $30 \n   - Ingredients: $75 \n   Total costs = $30 + $75 = $105.\n\n5. **Net Earnings after Costs**: \n   Net earnings = Total earnings - Total costs = $1000 - $105 = $895.\n\nThus, the booth earned $895 for 5 days after paying the rent and the cost of ingredients."]
+                        Number of agent calls: 1
+                        Agents called: ['Reasoning Agent']
+                        Total output tokens: 160
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456436 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456429 --------------------------
-                        User input: Evaluate Quinn catches twice the amount of frogs as Alster who caught 2.  Bret catches three times the amount of frogs as Quinn.  How many frogs did Bret catch?
-                        Agent response: ["To solve the problem, we need to determine the number of frogs that each person caught based on the information provided.\n\n1. **Alster's Catch**: Alster caught 2 frogs. \n   \n2. **Quinn's Catch**: Quinn catches twice the amount of frogs as Alster. Therefore, Quinn's catch can be calculated as:\n   \\[\n   \\text{Quinn's catch} = 2 \\times \\text{Alster's catch} = 2 \\times 2 = 4 \\text{ frogs}\n   \\]\n\n3. **Bret's Catch**: Bret catches three times the amount of frogs as Quinn. We can now find out how many frogs Bret caught:\n   \\[\n   \\text{Bret's catch} = 3 \\times \\text{Quinn's catch} = 3 \\times 4 = 12 \\text{ frogs}\n   \\]\n\nThus, Bret caught **12 frogs**. This step-by-step breakdown clearly shows how we derived the total number of frogs Bret caught based on the catches of Alster and Quinn."]
-                        Number of expected agent calls: 1
-                        Number of actual agent calls: 1
-                        Efficiency of agent calls: 100.0 %
-                        Agents expected to be called: ['Reasoning Agent']
-                        Agents actually called: ['Reasoning Agent']
-                        Expected result set: ['12']
-                        Actual result set: ['12']
-                        Total output tokens: 225
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456429 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456999 --------------------------
+                        User input: Evaluate Miss Darlington has a basket of 20 blueberries. She picked 9 more baskets with the same amount of berries. How many blueberries did Miss Darlington have in all?
+                        Agent response: ['To find the total number of blueberries that Miss Darlington has, we need to calculate the number of blueberries in all the baskets she has collected. She already has 1 basket containing 20 blueberries. She then picks 9 additional baskets, each containing the same amount of blueberries (20). Therefore, the calculation is as follows:\n\n1. Total baskets = 1 (initial basket) + 9 (additional baskets) = 10 baskets.\n2. Total blueberries = Total baskets × Blueberries per basket = 10 × 20 = 200 blueberries.\n\nThus, Miss Darlington has a total of 200 blueberries.']
+                        Number of agent calls: 1
+                        Agents called: ['Reasoning Agent']
+                        Total output tokens: 91
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456999 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456252 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456451 --------------------------
                         User input: What position on the Billboard Top 100 did Alison Moyet's late summer hit achieve?
-                        Agent response: ['\nRunning:\n - google_search(query=Alison Moyet Billboard Top 100 position late summer hit, max_results=5)\n\nAlison Moyet\'s song "Situation," released as a single in North America, achieved a peak position of **number 73** on the Billboard Hot 100 chart in the United States. This song was part of the synth-pop genre and was released in 1982. If you have any other questions or need further information, feel free to ask!']
-                        Number of expected agent calls: 1
-                        Number of actual agent calls: 1
-                        Efficiency of agent calls: 100.0 %
-                        Agents expected to be called: ['Data Retrieval Agent']
-                        Agents actually called: ['Data Retrieval Agent']
-                        Expected result set: []
-                        Actual result set: []
+                        Agent response: ['Alison Moyet\'s late summer hit "Situation" achieved a peak position of number 73 on the Billboard Hot 100 chart in the US.']
+                        Number of agent calls: 1
+                        Agents called: ['Data Retrieval Agent']
                         Total output tokens: 74
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456252 --------------------------
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456451 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456597 --------------------------
-                        User input: Which National Park includes the features Red Eagle Mountain and Going-to-the-Sun Road?
-                        Agent response: ['The features Red Eagle Mountain and Going-to-the-Sun Road are located in **Glacier National Park**, which is situated in Montana, USA. Glacier National Park is renowned for its stunning landscapes, including mountains, glaciers, and lush ecosystems. Going-to-the-Sun Road is particularly famous as it traverses the park and provides breathtaking views of the surrounding scenery, making it one of the most scenic drives in the country.']
-                        Number of expected agent calls: 1
-                        Number of actual agent calls: 1
-                        Efficiency of agent calls: 100.0 %
-                        Agents expected to be called: ['Data Retrieval Agent']
-                        Agents actually called: ['Data Retrieval Agent']
-                        Expected result set: ['Glacier National Park']
-                        Actual result set: ['Glacier National Park']
-                        Total output tokens: 64
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456597 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456917 --------------------------
+                        User input: What is the name of the college of law at the university for which Tom Lovat was head coach in 1975?
+                        Agent response: ['The name of the college of law at the University of Utah, where Tom Lovat was head coach in 1975, is the S.J. Quinney College of Law.']
+                        Number of agent calls: 1
+                        Agents called: ['Data Retrieval Agent']
+                        Total output tokens: 29
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456917 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456308 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456395 --------------------------
                         User input: 
                 Is below sentence hate or not-hate speech? Answer Yes or No
                 
 I personally think she sounds like a strangled cat.   
-         And Evaluate Tommy is making 12 loaves of bread. He needs 4 pounds of flour per loaf. A 10-pound bag of flour costs $10 and a 12-pound bag costs $13. When he is done making his bread, he has no use for flour and so he will throw away whatever is left. How much does he spend on flour if he buys the cheapest flour to get enough?
-                        Agent response: ['No', 'To determine how much Tommy will spend on flour, we first need to calculate how much flour he requires for 12 loaves of bread. \n\n1. **Flour needed per loaf**: 4 pounds\n2. **Total loaves**: 12 loaves\n\nSo, the total amount of flour needed is:\n\n\\[\n\\text{Total flour} = \\text{Flour per loaf} \\times \\text{Total loaves} = 4 \\, \\text{pounds/loaf} \\times 12 \\, \\text{loaves} = 48 \\, \\text{pounds}\n\\]\n\nNext, we look at the available flour bag options: \n\n- A **10-pound bag** costs $10.\n- A **12-pound bag** costs $13.\n\nTo determine how many bags Tommy will need, we can calculate how many of each bag type he would need for 48 pounds of flour.\n\n1. Using 10-pound bags:\n   - Number of 10-pound bags required = \\( \\frac{48 \\, \\text{pounds}}{10 \\, \\text{pounds/bag}} = 4.8 \\) bags.\n   - Since he cannot buy a fraction of a bag, he would need to buy 5 bags.\n   - Total weight from 5 bags = \\( 5 \\times 10 = 50 \\, \\text{pounds} \\).\n   - Total cost = \\( 5 \\times 10 = 50 \\, \\text{dollars} \\).\n\n2. Using 12-pound bags:\n   - Number of 12-pound bags required = \\( \\frac{48 \\, \\text{pounds}}{12 \\, \\text{pounds/bag}} = 4 \\) bags.\n   - Total weight from 4 bags = \\( 4 \\times 12 = 48 \\, \\text{pounds} \\).\n   - Total cost = \\( 4 \\times 13 = 52 \\, \\text{dollars} \\).\n\nNow let’s compare the costs:\n- Buying 5 bags of 10-pound flour costs $50.\n- Buying 4 bags of 12-pound flour costs $52.\n\nSince the cost for the 10-pound bags is less, Tommy should buy the 10-pound bags.\n\nTherefore, Tommy spends **$50** on flour by purchasing the cheapest option to obtain enough flour for his bread.']
-                        Number of expected agent calls: 2
-                        Number of actual agent calls: 2
-                        Efficiency of agent calls: 100.0 %
-                        Agents expected to be called: ['Text Classification Agent', 'Reasoning Agent']
-                        Agents actually called: ['Text Classification Agent', 'Reasoning Agent']
-                        Expected result set: ['Yes', '50']
-                        Actual result set: ['50']
-                        Total output tokens: 506
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456308 --------------------------
+         And Evaluate James is trying to decide which trail is faster to hike. One trail is 20 miles and mostly downhill, so James can cover it at 5 miles per hour. The other trail is 12 miles, but it's mostly uphill, so James will only be able to cover 3 miles per hour and will have to take an hour break halfway through. How many hours faster is the fastest hike?
+                        Agent response: ["The phrase expresses a negative opinion about someone's voice or singing, comparing it to an unpleasant sound. This could be interpreted as disrespectful or derogatory, but it does not contain explicit hate speech directed at a particular group. Therefore, the classification is not-hate speech.", "To determine which trail is faster for James, let's calculate the time it takes to hike each trail. \n\n**Trail 1 (20 miles downhill at 5 mph):**\n- Distance: 20 miles\n- Speed: 5 miles per hour\n- Time = Distance / Speed = 20 miles / 5 mph = 4 hours\n\n**Trail 2 (12 miles uphill at 3 mph with a 1-hour break):**\n- Distance: 12 miles\n- Speed: 3 miles per hour\n- Time to hike the 12 miles = Distance / Speed = 12 miles / 3 mph = 4 hours\n- Add break time: 4 hours + 1 hour = 5 hours total for Trail 2.\n\n**Comparison:**\n- Trail 1 takes 4 hours.\n- Trail 2 takes 5 hours.\n\n**Conclusion:** \nTrail 1 is faster than Trail 2 by 1 hour."]
+                        Number of agent calls: 2
+                        Agents called: ['Reasoning Agent', 'Text Classification Agent']
+                        Total output tokens: 165
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456395 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-1234563710 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456927 --------------------------
                         User input: 
                 Perform sentiment analysis on below sentence whether it is Happy or Sad. Answer Happy or Sad 
 Sentence: sad to say, she never lived to see it.   
-         And Find Fatherfucker is a studio album by which Canadian Singer?
-                        Agent response: ['Sad. \n\n"Fatherfucker" is a studio album by the Canadian singer-songwriter Peaches.', '\nRunning:\n - google_search(query=Find Fatherfucker studio album Canadian singer, max_results=1)\n\nThe album **"Fatherfucker"** is the third studio album by Canadian singer **Peaches**. It was released on September 23, 2003. If you\'d like to know more about Peaches or the album itself, feel free to ask!']
-                        Number of expected agent calls: 2
-                        Number of actual agent calls: 2
-                        Efficiency of agent calls: 100.0 %
-                        Agents expected to be called: ['Text Classification Agent', 'Data Retrieval Agent']
-                        Agents actually called: ['Text Classification Agent', 'Data Retrieval Agent']
-                        Expected result set: ['Sad', 'Peaches']
-                        Actual result set: ['Peaches', 'Sad']
-                        Total output tokens: 76
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-1234563710 --------------------------
+         And Find When did the monarch of Norway ascend to the throne?
+                        Agent response: ['The sentiment of the sentence expresses sadness due to the use of the phrase "sad to say" and the context provided.', 'The current monarch of Norway, King Harald V, ascended the throne on January 17, 1991. He was formally consecrated in a ceremony on June 23, 1991.']
+                        Number of agent calls: 2
+                        Agents called: ['Data Retrieval Agent', 'Text Classification Agent']
+                        Total output tokens: 106
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456927 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456102 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456177 --------------------------
                         User input: 
                 Perform spam analysis on below sentence whether it is Spam or Not-spam. Answer Yes or No 
 Sentence: You have an outstanding tax refund of $2,560. Follow these instructions to claim your refund at: https://gov.taxrefunds.irs.   
-         And Find What is the birthdate of this American sports interviewer who works for ESPN and hosts Football Sunday on ESPN Radio? And The last task is to Evaluate A married couple opened a savings account. The wife committed to saving $100 every week while the husband committed to saving $225 every month. After 4 months of savings, they decided to invest half of their money in buying stocks. Each share of stocks costs $50. How many shares of stocks can they buy?
-                        Agent response: ['Yes\n\nFor the birthdate of the American sports interviewer who works for ESPN and hosts Football Sunday on ESPN Radio, that would be Adam Schefter, whose birthdate is April 21, 1966.\n\nFor the evaluation of the savings account:  \nThe wife saves $100 every week for 4 months (approximately 16 weeks), which equals $1,600.  \nThe husband saves $225 every month for 4 months, which equals $900.  \nTogether, they have saved $1,600 + $900 = $2,500.  \nThey decided to invest half of their savings in stocks: $2,500 / 2 = $1,250.  \nAt $50 per share, they can buy $1,250 / $50 = 25 shares of stocks.', '\nRunning:\n - google_search(query=American sports interviewer ESPN Football Sunday birthdate, max_results=5)\n\nThe American sports interviewer who hosts *Football Sunday* on ESPN Radio is likely **Chris Berman**. His birthdate is **May 10, 1955**. \n\nFor more information, you can check his [Wikipedia page](https://en.wikipedia.org/wiki/Chris_Berman).']
-                        Number of expected agent calls: 3
-                        Number of actual agent calls: 2
-                        Efficiency of agent calls: 66.66666666666666 %
-                        Agents expected to be called: ['Text Classification Agent', 'Data Retrieval Agent', 'Reasoning Agent']
-                        Agents actually called: ['Text Classification Agent', 'Data Retrieval Agent']
-                        Expected result set: ['Yes', 'August 12, 1972', '25']
-                        Actual result set: ['25', 'Yes']
-                        Total output tokens: 223
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456102 --------------------------
+         And Find which movie was directed by Damien Chazelle and won the 2017 Guild of Music Supervisors Awards? And The last task is to Evaluate Kimberly went strawberry picking with her family over the weekend. She picked 8 times the amount of strawberries her brother picked and her parents picked 93 strawberries less than her. If her brother picked 3 baskets each containing 15 strawberries, how many strawberries would they each have if they divide the total number of strawberries equally amongst them?
+                        Agent response: ['The sentence appears to be promoting a scheme that resembles spam, as it encourages claiming a tax refund in a suspicious manner and directs the user to an external link.', 'The movie directed by Damien Chazelle that won the 2017 Guild of Music Supervisors Awards is "La La Land."']
+                        Number of agent calls: 2
+                        Agents called: ['Data Retrieval Agent', 'Text Classification Agent']
+                        Total output tokens: 99
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456177 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456767 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456652 --------------------------
                         User input: 
                 Perform spam analysis on below sentence whether it is Spam or Not-spam. Answer Yes or No 
 Sentence: Hey sachin how are doing today its been long we spoke.   
-         And Find which movie was directed by Damien Chazelle and won the 2017 Guild of Music Supervisors Awards? And The last task is to Evaluate Dave bought 8 books about animals, 6 books about outer space, and 3 books about trains to keep him busy over the holidays. Each book cost $6. How much did Dave spend on the books?
-                        Agent response: ['No', '\nRunning:\n - google_search(query=Damien Chazelle movie won 2017 Guild of Music Supervisors Awards, max_results=5)\n\nThe movie directed by Damien Chazelle that won the 2017 Guild of Music Supervisors Awards is **La La Land**. This acclaimed film, released in 2016, is a musical romantic drama that highlights the struggles of artists in Los Angeles. La La Land received widespread recognition and numerous awards for its music, direction, and cinematography.\n\nFor more detailed information about the awards it received, you can check the full list of winners [here](https://www.billboard.com/music/music-news/guild-of-music-supervisors-awards-winners-7694148/).']
-                        Number of expected agent calls: 3
-                        Number of actual agent calls: 2
-                        Efficiency of agent calls: 66.66666666666666 %
-                        Agents expected to be called: ['Text Classification Agent', 'Data Retrieval Agent', 'Reasoning Agent']
-                        Agents actually called: ['Text Classification Agent', 'Data Retrieval Agent']
-                        Expected result set: ['No', 'directed by Damien Chazelle', '102']
-                        Actual result set: ['No', 'directed by Damien Chazelle']
-                        Total output tokens: 123
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456767 --------------------------
+         And Find What is the top priority of the company that was formerly known as EyeTech Pharmaceuticals? And The last task is to Evaluate Tommy is making 12 loaves of bread. He needs 4 pounds of flour per loaf. A 10-pound bag of flour costs $10 and a 12-pound bag costs $13. When he is done making his bread, he has no use for flour and so he will throw away whatever is left. How much does he spend on flour if he buys the cheapest flour to get enough?
+                        Agent response: ['The sentence appears to be a friendly greeting and does not contain any spam-related features.', 'The top priority of the company formerly known as EyeTech Pharmaceuticals is centered on the development, commercialization, and delivery of novel therapeutics targeting eye diseases, particularly in the area of ophthalmology. The company focuses on creating treatments that can effectively address conditions like macular degeneration and strives to enhance vision care for patients suffering from various ocular diseases. Significant aggressive partnerships and licensing deals underscore their commitment to exploring new avenues for therapy in this specialized field. For instance, they announced an exclusive licensing deal with Gilead Sciences for a new therapy aimed at age-related macular degeneration, showcasing their focus on innovation in therapeutics. Often, their mission emphasizes improving patient outcomes and establishing themselves as a key resource for retina specialists.']
+                        Number of agent calls: 2
+                        Agents called: ['Data Retrieval Agent', 'Text Classification Agent']
+                        Total output tokens: 43
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456652 --------------------------
 
                 
-                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456766 --------------------------
+                        ----------------------------- Start of Evaluation Metric for Request : test-user-1-123456653 --------------------------
                         User input: 
-                Classify below sentence whether it is Positive or Negative. Answer Postive or Negative 
+                Classify below sentence whether it is Positive or Negative. Answer Positive or Negative 
 Sentence: I am going to curse you very badly.   
-         And Find When did the monarch of Norway ascend to the throne? And The last task is to Evaluate Karen is constantly trying to stop the raccoons from getting in her trash. The first lock she tries stalls them for 5 minutes. The next lock stalls them for 3 minutes less than three times as long as the first lock. When Karen tries both locks at once, it stalled the raccoons for five times as long as the second lock alone. How long is that?
-                        Agent response: ['Negative', "\nRunning:\n - google_search(query=monarch of Norway ascended to the throne date, max_results=5)\n\nThe current monarch of Norway, **King Harald V**, ascended to the throne on **January 17, 1991**, following the death of his father, King Olav V. He was formally blessed in a ceremony on June 23, 1991. King Harald V has been serving as king since then. \n\nFor more information, you can refer to the [Royal House of Norway's official page](https://www.royalcourt.no/artikkel.html?tid=28731&sek=27277) or check out his [Wikipedia page](https://en.wikipedia.org/wiki/Harald_V)."]
-                        Number of expected agent calls: 3
-                        Number of actual agent calls: 2
-                        Efficiency of agent calls: 66.66666666666666 %
-                        Agents expected to be called: ['Text Classification Agent', 'Data Retrieval Agent', 'Reasoning Agent']
-                        Agents actually called: ['Text Classification Agent', 'Data Retrieval Agent']
-                        Expected result set: ['Negative', '17 January 1991', '60']
-                        Actual result set: ['Negative']
-                        Total output tokens: 129
-                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456766 --------------------------
+         And Find R&B and blues musician Daryl Davis performed with which famous American singer born on November 23, 1954? And The last task is to Evaluate John uses the bathroom every 50 minutes.  How many times does he use the bathroom during a 2.5-hour movie?
+                        Agent response: ['Negative', 'Daryl Davis performed with American singer Billy Joel, who was born on November 23, 1954.']
+                        Number of agent calls: 2
+                        Agents called: ['Data Retrieval Agent', 'Text Classification Agent']
+                        Total output tokens: 72
+                        ----------------------------- End of Evaluation Metric for Request : test-user-1-123456653 --------------------------
 
                 

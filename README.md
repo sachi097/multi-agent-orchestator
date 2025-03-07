@@ -16,6 +16,22 @@ Setting use_google_tool=False configuration for data retrieval agent will create
 - HotPotQA - https://hotpotqa.github.io/
 - GSM8K - https://github.com/openai/grade-school-math
 
+## Guardrails AI Setup
+
+1. Sing in to [Guardrails AI](https://hub.guardrailsai.com/) and generate API Key (it's free)
+
+2. Configure:
+```
+guardrails configure
+```
+
+3. Download dependencies
+```
+guardrails hub install hub://guardrails/profanity_free
+guardrails hub install hub://guardrails/detect_jailbreak
+guardrails hub install hub://guardrails/detect_pii
+```
+
 ## Setup
 
 1. Clone this repository:
@@ -48,7 +64,7 @@ DATA_RETRIEVER_API_KEY=openai-api-key-here
 
 4. Run tests
 ```
-python main.py
+python tests.py
 ```
 >PS: Please wait initially for dataset to be downloaded
 

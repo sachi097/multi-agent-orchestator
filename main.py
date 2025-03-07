@@ -7,9 +7,8 @@ from classifiers import OpenAIClassifier, OpenAIClassifierOptions
 import asyncio
 from typing import List
 from loguru import logger
-import dspy
-from dspy.datasets import HotPotQA
-from dspy.datasets.gsm8k import GSM8K
+from guardrails.hub import DetectPII, DetectJailbreak, ProfanityFree
+from guardrails import Guard
 
 from dotenv import load_dotenv
 import os
@@ -32,10 +31,10 @@ class MainClass():
         # Create Text Classification Agent
         text_classification_agent = TextClassifierAgent(TextClassifierAgentOptions(
                 name="Text Classification Agent",
-                description="Classifies given sentenence into provided classification label. Just provide answer either one of the classification label, do not provide any reasons. You perform only classification tasks.",
+                description="Classifies given sentenence into provided classification label. \n Just provide answer either one of the classification label, do not provide any reasons. \n You perform only classification tasks.",
                 save_chat=True,
                 agent_config={
-                    'maxTokens': 1000,
+                    'maxTokens': 5000,
                     'temperature': None,
                     'topP': None,
                     'stopSequences': None
@@ -49,10 +48,10 @@ class MainClass():
         # Create Reasoning Agent
         reasoning_agent = ReasoningAgent(ReasoningAgentOptions(
                 name="Reasoning Agent",
-                description="Evaluates given task and provides in depth reasons to justify arrived solution.  You perform only reasoning tasks.",
+                description="Evaluates given task and provides in depth reasons to justify arrived solution.\n You perform only reasoning tasks. \n You do not perform data retrieval.",
                 save_chat=True,
                 agent_config={
-                    'maxTokens': 1000,
+                    'maxTokens': 5000,
                     'temperature': None,
                     'topP': None,
                     'stopSequences': None
@@ -66,10 +65,10 @@ class MainClass():
         # Create Data Retrieval Agent
         data_retrieval_agent = DataRetrievalAgent(DataRetrievalAgentOptions(
                 name="Data Retrieval Agent",
-                description="Answer given question by providing in depth reasoning and knowledge using provided knowledge base or search tool. Include yes or no in your response if question asks for. You perform only data retrieval tasks.",
+                description="Answer given question by providing in depth reasoning and knowledge using provided knowledge base or search tool. \n Include yes or no in your response if question asks for. \n You perform only data retrieval tasks. \n You do not perform reasoning tasks.",
                 save_chat=True,
                 agent_config={
-                    'maxTokens': 1000,
+                    'maxTokens': 5000,
                     'temperature': None,
                     'topP': None,
                     'stopSequences': None
@@ -113,13 +112,8 @@ class MainClass():
             print(f"\n----------------------------- Start of Evaluation Metric for Request : {results[0].REQUEST_ID} --------------------------")
             print(f"User input: {user_input}")
             print(f"Agent response: {agent_output}")
-            print(f"Number of expected agent calls: {expectedResult.NUMBER_OF_AGENT_CALL}")
-            print(f"Number of actual agent calls: {len(results)}")
-            print(f"Efficiency of agent calls: {(len(results) / expectedResult.NUMBER_OF_AGENT_CALL) * 100} %")
-            print(f"Agents expected to be called: {expectedResult.AGENTS}")
-            print(f"Agents actually called: {list(agents_called_set)}")
-            print(f"Expected result set: {expectedResult.RESULTS}")
-            print(f"Actual result set: {list(agent_result_set)}")
+            print(f"Number of agent calls: {len(results)}")
+            print(f"Agents called: {list(agents_called_set)}")
             print(f"Total output tokens: {total_output_token}")
             print(f"----------------------------- End of Evaluation Metric for Request : {results[0].REQUEST_ID} --------------------------\n")
 
@@ -128,17 +122,13 @@ class MainClass():
                         ----------------------------- Start of Evaluation Metric for Request : {results[0].REQUEST_ID} --------------------------
                         User input: {user_input}
                         Agent response: {agent_output}
-                        Number of expected agent calls: {expectedResult.NUMBER_OF_AGENT_CALL}
-                        Number of actual agent calls: {len(results)}
-                        Efficiency of agent calls: {(len(results) / expectedResult.NUMBER_OF_AGENT_CALL) * 100} %
-                        Agents expected to be called: {expectedResult.AGENTS}
-                        Agents actually called: {list(agents_called_set)}
-                        Expected result set: {expectedResult.RESULTS}
-                        Actual result set: {list(agent_result_set)}
+                        Number of agent calls: {len(results)}
+                        Agents called: {list(agents_called_set)}
                         Total output tokens: {total_output_token}
                         ----------------------------- End of Evaluation Metric for Request : {results[0].REQUEST_ID} --------------------------\n
                 '''
             )
+            file.flush()
         except:
             logger.error("Unexpeted error from agent")
 
@@ -146,14 +136,6 @@ class MainClass():
 if __name__ == '__main__':
     try:
         file = open("log.txt", "w")
-        
-        # init GSM8k dataset
-        datasetGSM = GSM8K()
-        devGSMSet = [x.with_inputs('question') for x in datasetGSM.dev]
-        
-        # init HotPotQA dataset
-        datasetHotQA = HotPotQA(dev_size=50, test_size=0)
-        devHotQASet = [x.with_inputs('question') for x in datasetHotQA.dev]
 
         mainClass = MainClass()
         
@@ -161,147 +143,41 @@ if __name__ == '__main__':
         session_id="123456"
 
         request_prefix = user_id + "-" + session_id
-
-        ## Easy tasks
+        i = 1
         
-        # 1. First test case
-        user_input = "Classify below Sentence whether it is Positive or Negative. Answer Positive or Negative \nSentence: I am feeling so good today."
-        results = mainClass.run(user_input, user_id, session_id, request_prefix.lower() + str(random.randint(1, 10)))
-        expectedResult = ExpectedResult(
-            NUMBER_OF_AGENT_CALL=1,
-            AGENTS=['Text Classification Agent'],
-            RESULTS=['Positive']
+        input_guard = Guard().use_many(
+            DetectJailbreak(on_fail="exception"),
+            DetectPII(["EMAIL_ADDRESS", "PHONE_NUMBER"], on_fail="exception")
         )
-        mainClass.evaluationMetric(user_input, results, expectedResult, file)
 
-        # 2. Second test case from GSM8K - grade-school-math
-        session_id="123456" + str(random.randint(1, 100))
-        request_prefix = user_id + "-" + session_id
-        user_input = "Evaluate A carnival snack booth made $50 selling popcorn each day. It made three times as much selling cotton candy. For a 5-day activity, the booth has to pay $30 rent and $75 for the cost of the ingredients. How much did the booth earn for 5 days after paying the rent and the cost of ingredients?"
-        results = mainClass.run(user_input, user_id, session_id, request_prefix.lower() + str(random.randint(1, 10)))
-        expectedResult = ExpectedResult(
-            NUMBER_OF_AGENT_CALL=1,
-            AGENTS=['Reasoning Agent'],
-            RESULTS=['895']
+        output_guard = Guard().use_many(
+            ProfanityFree(on_fail="exception"),
         )
-        mainClass.evaluationMetric(user_input, results, expectedResult, file)
 
-        # 3. Random test case from GSM8K dataset
-        session_id="123456" + str(random.randint(1, 100))
-        request_prefix = user_id + "-" + session_id
-        random_gsm_quetsion_index = random.randint(0, len(devGSMSet)-1)
-        user_input = "Evaluate " + devGSMSet[random_gsm_quetsion_index]['question']
-        results = mainClass.run(user_input, user_id, session_id, request_prefix.lower() + str(random.randint(1, 10)))
-        expectedResult = ExpectedResult(
-            NUMBER_OF_AGENT_CALL=1,
-            AGENTS=['Reasoning Agent'],
-            RESULTS=[devGSMSet[random_gsm_quetsion_index]['answer']]
-        )
-        mainClass.evaluationMetric(user_input, results, expectedResult, file)
 
-        # 4. Known test case from HotPotQA
-        session_id="123456" + str(random.randint(1, 100))
-        request_prefix = user_id + "-" + session_id
-        user_input = "What position on the Billboard Top 100 did Alison Moyet's late summer hit achieve?"
-        results = mainClass.run(user_input, user_id, session_id, request_prefix.lower() + str(random.randint(1, 10)))
-        expectedResult = ExpectedResult(
-            NUMBER_OF_AGENT_CALL=1,
-            AGENTS=['Data Retrieval Agent'],
-            RESULTS=[]
-        )
-        mainClass.evaluationMetric(user_input, results, expectedResult, file)
+        while True:
 
-        # 5. Random test case from HotPotQA dataset
-        session_id="123456" + str(random.randint(1, 100))
-        request_prefix = user_id + "-" + session_id
-        random_qa_quetsion_index = random.randint(0, len(devHotQASet)-1)
-        user_input = devHotQASet[random_qa_quetsion_index]['question']
-        results = mainClass.run(user_input, user_id, session_id, request_prefix.lower() + str(random.randint(1, 10)))
-        expectedResult = ExpectedResult(
-            NUMBER_OF_AGENT_CALL=1,
-            AGENTS=['Data Retrieval Agent'],
-            RESULTS=[devHotQASet[random_qa_quetsion_index]['answer']]
-        )
-        mainClass.evaluationMetric(user_input, results, expectedResult, file)
+            print(f"Performing request: {i}")
+            user_input = input("Enter your query: ")
+            if user_input == "exit":
+                break
+            else:
+                try:
+                    # expected_calls = int(input("Number of agent calls expected: "))
+                    input_guard.validate(user_input)
+                    results = mainClass.run(user_input, user_id, session_id, request_prefix.lower() + str(i))
+                    for result in results:
+                        output_guard.validate(result.AGENT_OUTPUT)
 
-        ## Complex Tasks
-
-        # 6. Test with classification and reasoning tasks
-        session_id="123456" + str(random.randint(1, 100))
-        request_prefix = user_id + "-" + session_id
-        random_gsm_quetsion_index = random.randint(0, len(devGSMSet)-1)
-        user_input = '''
-                Is below sentence hate or not-hate speech? Answer Yes or No
-                \nI personally think she sounds like a strangled cat.   
-        ''' +  " And Evaluate " + devGSMSet[random_gsm_quetsion_index]['question']
-        results = mainClass.run(user_input, user_id, session_id, request_prefix.lower() + str(random.randint(1, 10)))
-        expectedResult = ExpectedResult(
-            NUMBER_OF_AGENT_CALL=2,
-            AGENTS=['Text Classification Agent', 'Reasoning Agent'],
-            RESULTS=['Yes', devGSMSet[random_gsm_quetsion_index]['answer']]
-        )
-        mainClass.evaluationMetric(user_input, results, expectedResult, file)
-
-        # 7. Test with classification and retrieval tasks
-        session_id="123456" + str(random.randint(1, 100))
-        request_prefix = user_id + "-" + session_id
-        random_qa_quetsion_index = random.randint(0, len(devHotQASet)-1)
-        user_input = '''
-                Perform sentiment analysis on below sentence whether it is Happy or Sad. Answer Happy or Sad \nSentence: sad to say, she never lived to see it.   
-        ''' +  " And Find " + devHotQASet[random_qa_quetsion_index]['question']
-        results = mainClass.run(user_input, user_id, session_id, request_prefix.lower() + str(random.randint(1, 10)))
-        expectedResult = ExpectedResult(
-            NUMBER_OF_AGENT_CALL=2,
-            AGENTS=['Text Classification Agent', 'Data Retrieval Agent'],
-            RESULTS=['Sad', devHotQASet[random_qa_quetsion_index]['answer']]
-        )
-        mainClass.evaluationMetric(user_input, results, expectedResult, file)
-
-        # 8. Test with classification, reasoning and retrieval tasks
-        session_id="123456" + str(random.randint(1, 100))
-        request_prefix = user_id + "-" + session_id
-        random_gsm_quetsion_index = random.randint(0, len(devGSMSet)-1)
-        random_qa_quetsion_index = random.randint(0, len(devHotQASet)-1)
-        user_input = '''
-                Perform spam analysis on below sentence whether it is Spam or Not-spam. Answer Yes or No \nSentence: You have an outstanding tax refund of $2,560. Follow these instructions to claim your refund at: https://gov.taxrefunds.irs.   
-        ''' + " And Find " + devHotQASet[random_qa_quetsion_index]['question'] + " And The last task is to Evaluate " + devGSMSet[random_gsm_quetsion_index]['question']
-        results = mainClass.run(user_input, user_id, session_id, request_prefix.lower() + str(random.randint(1, 10)))
-        expectedResult = ExpectedResult(
-            NUMBER_OF_AGENT_CALL=3,
-            AGENTS=['Text Classification Agent', 'Data Retrieval Agent', 'Reasoning Agent'],
-            RESULTS=['Yes', devHotQASet[random_qa_quetsion_index]['answer'], devGSMSet[random_gsm_quetsion_index]['answer']]
-        )
-        mainClass.evaluationMetric(user_input, results, expectedResult, file)
-
-        # 9. Test with classification, reasoning and retrieval tasks
-        session_id="123456" + str(random.randint(1, 100))
-        request_prefix = user_id + "-" + session_id
-        random_gsm_quetsion_index = random.randint(0, len(devGSMSet)-1)
-        random_qa_quetsion_index = random.randint(0, len(devHotQASet)-1)
-        user_input = '''
-                Perform spam analysis on below sentence whether it is Spam or Not-spam. Answer Yes or No \nSentence: Hey sachin how are doing today its been long we spoke.   
-        ''' + " And Find " + devHotQASet[random_qa_quetsion_index]['question'] + " And The last task is to Evaluate " + devGSMSet[random_gsm_quetsion_index]['question']
-        results = mainClass.run(user_input, user_id, session_id, request_prefix.lower() + str(random.randint(1, 10)))
-        expectedResult = ExpectedResult(
-            NUMBER_OF_AGENT_CALL=3,
-            AGENTS=['Text Classification Agent', 'Data Retrieval Agent', 'Reasoning Agent'],
-            RESULTS=['No', devHotQASet[random_qa_quetsion_index]['answer'], devGSMSet[random_gsm_quetsion_index]['answer']]
-        )
-        mainClass.evaluationMetric(user_input, results, expectedResult, file)
-
-        # 10. Test with classification, reasoning and retrieval tasks
-        random_gsm_quetsion_index = random.randint(0, len(devGSMSet)-1)
-        random_qa_quetsion_index = random.randint(0, len(devHotQASet)-1)
-        user_input = '''
-                Classify below sentence whether it is Positive or Negative. Answer Postive or Negative \nSentence: I am going to curse you very badly.   
-        ''' + " And Find " + devHotQASet[random_qa_quetsion_index]['question'] + " And The last task is to Evaluate " + devGSMSet[random_gsm_quetsion_index]['question']
-        results = mainClass.run(user_input, user_id, session_id, request_prefix.lower() + str(random.randint(1, 10)))
-        expectedResult = ExpectedResult(
-            NUMBER_OF_AGENT_CALL=3,
-            AGENTS=['Text Classification Agent', 'Data Retrieval Agent', 'Reasoning Agent'],
-            RESULTS=['Negative', devHotQASet[random_qa_quetsion_index]['answer'], devGSMSet[random_gsm_quetsion_index]['answer']]
-        )
-        mainClass.evaluationMetric(user_input, results, expectedResult, file)
+                    expectedResult = ExpectedResult(
+                        NUMBER_OF_AGENT_CALL=1,
+                        AGENTS=[],
+                        RESULTS=[]
+                    )
+                    mainClass.evaluationMetric(user_input, results, expectedResult, file)
+                except Exception as error:
+                    logger.info(f"Error: {error}")    
+            i = i + 1
 
         file.close()
     except Exception as error:

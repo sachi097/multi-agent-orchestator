@@ -38,17 +38,17 @@ class OpenAIClassifier(Classifier):
                 'type': 'function',
                 'function': {
                     'name': 'processPrompt',
-                    'description': 'Analyze and process user input and provide structured output',
+                    'description': 'Analyze and process user input then divide the input query into sub-tasks if needed and pick apporpriate agent for the sub-task from the agents and provide structured output',
                     'parameters': {
                         'type': 'object',
                         'properties': {
                             'input': {
                                 'type': 'string',
-                                'description': 'The original input of the user',
+                                'description': 'The input for the current selected agent, include complete query of the sub-task from original_user_input',
                             },
                             'agent_selected': {
                                 'type': 'string',
-                                'description': 'The name of the agent selected',
+                                'description': 'The name of the agent selected to perform current task',
                             },
                             'accuracy': {
                                 'type': 'number',
@@ -96,11 +96,13 @@ class OpenAIClassifier(Classifier):
                 raise ValueError("Call to tool function processPrompt is missing")
 
             tool_input = json.loads(tool_response.function.arguments)
+            logger.info(tool_input)
 
             if tool_input['next_action_input'] == '':
                 tool_input['next_action_input'] = "unknown"
 
             intent_classifier_result = ClassifierResult(
+                input=tool_input['input'],
                 agent_selected=self.get_agent_by_id(tool_input['agent_selected']),
                 accuracy=float(tool_input['accuracy']),
                 action=tool_input['action'],

@@ -9,21 +9,27 @@ class ConversationRole(Enum):
 
 class ConversationMessage:
     role: ConversationRole
+    original_user_input: str
+    short_output: str
     tokens: Optional[int]
     content: List[Any]
 
-    def __init__(self, role: ConversationRole, tokens: Optional[int], content: Optional[List[Any]] = None):
+    def __init__(self, role: ConversationRole, original_user_input: str, short_output: str, tokens: Optional[int], content: Optional[List[Any]] = None):
         self.role = role
+        self.original_user_input = original_user_input
+        self.short_output = short_output
         self.tokens = tokens
         self.content = content
 
 class TimestampedMessage(ConversationMessage):
     def __init__(self,
                  role: ConversationRole,
+                 original_user_input: str,
+                 short_output: str,
                  content: Optional[List[Any]] = None,
                  tokens: Optional[int] = 0,
                  timestamp: Optional[int] = None):
-        super().__init__(role, tokens, content)
+        super().__init__(role, original_user_input, short_output, tokens, content)
         self.timestamp = timestamp or int(time.time() * 1000) 
 
 @dataclass

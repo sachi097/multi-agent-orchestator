@@ -28,6 +28,8 @@ class MemoryStorage(ChatStorage):
         if isinstance(new_message, ConversationMessage):
             timestamped_message = TimestampedMessage(
                 role=new_message.role,
+                original_user_input=new_message.original_user_input,
+                short_output=new_message.short_output,
                 tokens=new_message.tokens,
                 content=new_message.content)
         conversation.append(timestamped_message)
@@ -50,6 +52,8 @@ class MemoryStorage(ChatStorage):
         if isinstance(new_messages[0], ConversationMessage):  # Check only first message
             new_messages = [TimestampedMessage(
                     role=new_message.role,
+                    original_user_input=new_message.original_user_input,
+                    short_output=new_message.short_output,
                     tokens=new_message.tokens,
                     content=new_message.content
                     )
@@ -89,6 +93,8 @@ class MemoryStorage(ChatStorage):
                         new_content = [{'text':f"[{agent_id}] {new_content[0]['text']}"}]
                     all_messages.append(TimestampedMessage(
                         role=message.role,
+                        original_user_input=message.original_user_input,
+                        short_output=message.short_output,
                         tokens=message.tokens,
                         content=new_content,
                         timestamp=message.timestamp
@@ -106,6 +112,8 @@ class MemoryStorage(ChatStorage):
     def _remove_timestamps(messages: list[dict]) -> list[ConversationMessage]:
         return [ConversationMessage(
             role=message.role,
+            original_user_input=message.original_user_input,
+            short_output=message.short_output,
             tokens=message.tokens,
             content=message.content
             ) for message in messages]

@@ -9,14 +9,16 @@ API_URL = "http://127.0.0.1:8080/orchestrated_chat"
 
 
 # Input box for user messages
+user_id = st.text_area("Enter your user id:", height=68, placeholder="Type your user id here...")
 user_input = st.text_area("Enter your message(s):", height=150, placeholder="Type your message here...")
 
 # Button to send the query
 if st.button("Submit"):
     if user_input.strip():
         try:
+            
             # Send the input to the FastAPI backend
-            payload = {"user_input": user_input, "user_id": "test-user-12345", "session_id": "123456"}
+            payload = {"user_input": user_input, "user_id": user_id, "session_id": "123456"}
             response = requests.post(API_URL, json=payload, stream=True)
             
             # Display the response
